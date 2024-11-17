@@ -1,0 +1,1169 @@
+@charset "UTF-8";
+/*導覽列*/
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@400;700&display=swap");
+.nav {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(53, 53, 53, 0.4);
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+}
+.nav ul {
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  flex: 1;
+  text-align: center;
+}
+.nav ul li {
+  margin: 0 30px;
+  height: 100%;
+  width: 10%;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+.nav ul li:hover {
+  transition: 0.3s;
+  background-color: #E0FFE0;
+}
+.nav ul li:hover a {
+  color: #333333;
+}
+.nav ul li a {
+  display: block;
+  margin: 0 auto;
+  font-size: 40px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.nav .dow {
+  width: 15%;
+  background-color: #E0FFE0;
+  border-radius: 20px;
+  height: 100%;
+  font-size: 20px;
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  color: #333333;
+}
+
+body {
+  cursor: url("../img/棒棒.png"), auto;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("../img/主地圖.png");
+}
+
+.video {
+  position: relative;
+  width: 80%;
+  height: 80%; /* 让背景占满视窗高度 */
+  margin: 0 auto;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* 让视频在内容下面 */
+  -o-object-fit: cover;
+     object-fit: cover; /* 让视频填满容器 */
+}
+
+.background-video1 {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* 让视频在内容下面 */
+  -o-object-fit: cover;
+     object-fit: cover; /* 让视频填满容器 */
+}
+
+.main {
+  height: 100vh;
+  background-image: url(../img/主地圖.png);
+  background-attachment: fixed;
+  background-position: center;
+  position: relative; /* 设为相对定位 */
+  opacity: 1; /* 初始不透明度 */
+  transition: opacity 1s;
+  overflow: hidden;
+}
+
+.mid2 {
+  overflow: hidden;
+  background-image: url("../img/主地圖.png");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.logo {
+  position: absolute; /* 使其绝对定位 */
+  top: 80px; /* 距离顶部 20px */
+  left: 40px; /* 距离左边 20px */
+  width: 200px; /* 根据需要调整图片宽度 */
+  height: 200px; /* 保持比例 */
+  z-index: 2; /* 确保在其他元素上方 */
+}
+
+.qr {
+  z-index: 2;
+  position: absolute; /* 固定在页面 */
+  bottom: 20px; /* 距离底部 20px */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%); /* 向左移动自身宽度的50%以居中 */
+  max-width: 100%; /* 控制图片最大宽度 */
+  height: auto; /* 保持图片比例 */
+  display: flex;
+}
+
+.dowload {
+  display: block;
+  width: 300px;
+  height: 100px;
+  margin-left: 10px;
+}
+
+.dowload1 {
+  width: 300px;
+  height: 100px;
+  display: block;
+  margin-top: 55px;
+  margin-left: 10px;
+}
+
+.map {
+  width: 125px;
+  height: 125px;
+}
+
+.mid {
+  display: flex;
+  flex-direction: row;
+}
+
+.head1 {
+  width: 60%;
+  height: 50%;
+}
+
+/* 遮罩层 */
+.overlay {
+  display: none; /* 初始隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  z-index: 1000; /* 确保在最上方 */
+}
+
+/* 弹出视窗样式 */
+.popup {
+  position: fixed;
+  width: 20%;
+  background-image: url(../img/1號框.png);
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* 盖住遮罩层 */
+  text-align: center;
+  max-width: 80%;
+}
+
+/* 关闭按钮样式 */
+.close-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #ff1a1a;
+}
+
+/**/
+.container {
+  cursor: url("img/棒棒.png"), auto;
+  align-items: center;
+  width: 100%;
+  /* 包含图片的div宽度 */
+  filter: brightness(0);
+  transition: filter 0.3s ease;
+  /* 初始透明度 */
+  /* 添加平滑过渡效果 */
+  text-align: center;
+  height: 25%;
+  /* 文字居中 */
+  cursor: pointer; /* 鼠标悬浮效果 */
+}
+.container p {
+  font-size: 20px;
+  color: white;
+}
+
+.mid {
+  cursor: url("../img/棒棒.png"), auto;
+  background-image: url("../img/主地圖2.png");
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: auto;
+  justify-content: center;
+}
+
+.image-group {
+  flex-direction: column;
+  top: 10%;
+  position: absolute;
+  left: 15%; /* 定位在容器最左侧 */
+  width: 10%;
+}
+
+.cha1 {
+  margin-top: 20vh;
+  width: 746px;
+  height: 600px;
+  opacity: 1;
+  position: absolute;
+}
+
+.cha2 {
+  margin-top: 20vh;
+  width: 746px;
+  height: 600px;
+  position: absolute;
+}
+
+.cha3 {
+  margin-top: 20vh;
+  width: 746px;
+  height: 600px;
+  position: absolute;
+}
+
+.cha4 {
+  margin-top: 20vh;
+  width: 746px;
+  height: 600px;
+  position: absolute;
+}
+
+.container2 {
+  height: 35%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  /* 文字居中 */
+  cursor: pointer; /* 鼠标悬浮效果 */
+  background-image: url("../img/長方形 藍色背景 金色邊框.png");
+  background-size: cover;
+  z-index: 1;
+}
+.container2 p {
+  line-height: 1.6;
+  font-size: 20px;
+  color: white;
+}
+
+.image-group1 {
+  width: 50%;
+  margin-top: 80px;
+}
+
+.container1 {
+  cursor: url("img/棒棒.png"), auto;
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  width: 90%;
+  /* filter: brightness(0.5);
+  transition: opacity 0.5s; /* 添加平滑过渡效果 */
+  display: flex;
+  flex-direction: row;
+  /* 文字居中 */
+  cursor: pointer; /* 鼠标悬浮效果 */
+  background-image: url("../img/長方形 藍色背景 金色邊框.png");
+  background-size: cover;
+  border-radius: 20px;
+}
+.container1:hover {
+  transform: translateY(-5px);
+  cursor: url("img/棒棒.png"), auto;
+  filter: brightness(1);
+  transition: transform 0.5s;
+}
+.container1 h2 {
+  margin-bottom: 0;
+}
+.container1 p {
+  line-height: 1.6;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+.container1-text {
+  width: 70%;
+  height: 100%;
+}
+
+.head {
+  border-radius: 20px;
+  height: 100%;
+  width: 30%;
+}
+
+.cha {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  background-image: url(../img/1號框.png);
+  background-size: cover;
+  height: 100px;
+  align-items: center;
+}
+.jaose {
+  position: absolute; /* 設置為相對定位 */
+  width: 50%; /* 寬度可根據需要設置 */
+  min-height: 40%;
+  display: flex;
+  justify-content: center;
+  top: 50%; /* 从顶部开始 */
+  left: 50%; /* 从左侧开始 */
+  transform: translate(-50%, -50%);
+}
+
+/* 点击后的透明度样式 */
+.container.clicked {
+  opacity: 1; /* 点击时透明度变为 1 */
+}
+
+.plus {
+  cursor: url("../img/棒棒.png"), auto;
+  margin: 0 auto;
+  width: 200px;
+  border: 1px white solid;
+  text-align: center;
+}
+.plus a {
+  width: 200px;
+  cursor: url("../img/棒棒.png"), auto;
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  background-color: black;
+  min-height: 300px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-section {
+  width: 30%;
+}
+
+.footer-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-section p, .footer-section ul, .footer-bottom p {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+  background-color: #222;
+  color: #999;
+}
+
+.buttons {
+  transition: transform 0.5s ease, filter 0.5s ease;
+  position: absolute; /* 设置为绝对定位 */
+  bottom: 25%; /* 将元素定位到父元素的底部 */
+  left: 0; /* 从左侧对齐 */
+}
+
+.buttons img {
+  transition: transform 0.5s ease, filter 0.5s ease; /* 控制变换和滤镜的过渡效果 */
+}
+
+.buttons img:hover {
+  transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+  filter: brightness(1.1); /* 鼠标悬停时增加亮度 */
+}
+
+.container2 {
+  transition: opacity 0.5s ease;
+  opacity: 0; /* 初始透明度 */
+  visibility: hidden; /* 隐藏元素占用空间 */
+}
+
+.container2.show {
+  opacity: 1; /* 显示时的透明度 */
+  visibility: visible; /* 显示元素 */
+}
+
+.test {
+  position: relative;
+}
+
+.world {
+  background-image: url(../img/主地圖2.png);
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.world-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 元素在容器内左右分布 */
+}
+
+.worldimg {
+  width: 50%;
+}
+
+/* 定义浮动动画 */
+@keyframes float {
+  0% {
+    transform: translateY(0); /* 初始位置 */
+  }
+  50% {
+    transform: translateY(-10px); /* 向上移动 10 像素 */
+  }
+  100% {
+    transform: translateY(0); /* 返回初始位置 */
+  }
+}
+.updown {
+  position: relative; /* 让元素在父容器中相对定位 */
+  animation: float 3s ease-in-out infinite;
+}
+
+.flex-link {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center;
+  justify-content: flex-end; /* 文字放在底部 */
+  text-decoration: none;
+  width: 150px; /* 根据需要设置宽度 */
+  height: 150px; /* 设置固定高度 */
+  overflow: hidden;
+}
+.flex-link:hover img {
+  transition: transform 0.3s;
+  transform: translateY(-5px);
+  box-shadow: -10px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.flex-link img {
+  width: 100%;
+  height: auto;
+  flex-grow: 1; /* 图片占满剩余空间 */
+}
+
+.flex-link .text {
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.flex-link:hover + .circle {
+  opacity: 1; /* 显示 */
+  transform: scale(1); /* 放大到正常尺寸 */
+  animation: pulse 2s infinite;
+  transition: 0.5s;
+}
+
+.v1 {
+  margin-top: 200px;
+  margin-left: 890px;
+  position: absolute;
+  z-index: 1;
+}
+
+.v2 {
+  margin-top: 270px;
+  margin-left: 320px;
+  position: absolute;
+  z-index: 1;
+}
+
+.v3 {
+  margin-top: 570px;
+  margin-left: 1100px;
+  position: absolute;
+  z-index: 1;
+}
+
+.v4 {
+  margin-top: 400px;
+  margin-left: 1600px;
+  position: absolute;
+  z-index: 1;
+  overflow: visible;
+}
+
+.circle {
+  background-image: url(../img/箭頭.png);
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  opacity: 0;
+}
+
+.team-container {
+  margin: 0 auto;
+  height: 20%;
+  width: 50%;
+  margin-top: 5%;
+}
+.team-container p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.team-title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.memberbox {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: 20%;
+  left: 15%;
+}
+
+.memberbox1 {
+  position: absolute;
+  display: flex;
+  top: 60%;
+  width: 80%;
+  height: 20%;
+  left: 15%;
+}
+
+.mbox {
+  margin: 10px;
+  border-radius: 20px;
+  background-color: rgb(0, 183, 255);
+  display: flex;
+  width: 40%;
+  height: 100%;
+  border: 4px solid yellow;
+}
+
+.mimg {
+  border-radius: 50%;
+  width: 30%;
+}
+
+.mtext hr {
+  width: 100px;
+  border: none; /* 移除默认边框 */
+  height: 2px; /* 设置线的粗细 */
+  background-color: black; /* 设置线的颜色 */
+  margin: 20px 0;
+}
+
+/* 定义旋转动画 */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* 放大到 1.2 倍 */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 37px;
+  }
+  50% {
+    left: 74px;
+  }
+  75% {
+    left: 101px;
+  }
+  100% {
+    left: 120px;
+    /* 水平移动的距离，可根据需要调整 */
+  }
+}
+@keyframes move2 {
+  0% {
+    right: 0;
+  }
+  25% {
+    right: 40px;
+  }
+  50% {
+    right: 80px;
+  }
+  75% {
+    right: 100px;
+  }
+  100% {
+    right: 120px; /* 水平移动的距离，可根据需要调整 */
+  }
+}
+/* 垂直浮动 */
+@keyframes updown {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: 10px; /* 垂直移动的幅度，可根据需要调整 */
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.moving-image {
+  z-index: 3;
+  width: 100px;
+  position: absolute;
+  animation: move 10s linear infinite alternate, updown 4s ease-in-out infinite;
+}
+
+.moving-image2 {
+  z-index: 3;
+  width: 100px;
+  position: absolute;
+  animation: move2 10s linear infinite alternate, updown 4s ease-in-out infinite;
+}
+
+.clouds {
+  z-index: 3;
+  transition: 1s;
+}
+
+.clouds:hover {
+  opacity: 0;
+}
+
+#team {
+  text-align: center;
+  padding: 20px;
+}
+
+.team-intro {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.qr2 {
+  display: none;
+}
+
+.dowar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-button {
+    position: absolute;
+    top: 85%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+  .container1 {
+    cursor: url("../img/棒棒.png"), auto;
+    margin-top: 3%;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    /* filter: brightness(0.5);
+    transition: opacity 0.5s; /* 添加平滑过渡效果 */
+    display: flex;
+    flex-direction: row;
+    /* 文字居中 */
+    cursor: pointer; /* 鼠标悬浮效果 */
+    background-image: url("../img/1號框.png");
+    background-size: cover;
+    border-radius: 20px;
+  }
+  .container1:hover {
+    transform: translateY(-5px);
+    cursor: url("../img/棒棒.png"), auto;
+    filter: brightness(1);
+    transition: transform 0.5s;
+  }
+  .container1 p {
+    line-height: 1.2;
+    font-size: 10px;
+  }
+  .plus {
+    cursor: url("../img/棒棒.png"), auto;
+    margin: 0 auto;
+    width: 200px;
+    border: 1px white solid;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .plus a {
+    cursor: url("../img/棒棒.png"), auto;
+    text-decoration: none;
+    color: white;
+  }
+  .image-group1 {
+    width: 80%;
+    margin-top: 80px;
+  }
+  .image-group {
+    flex-direction: row;
+    top: 10%;
+    position: absolute;
+    left: 10%;
+    width: 100%;
+    display: flex;
+    width: 80%;
+  }
+  .head1 {
+    width: 80%;
+  }
+  .container {
+    cursor: url("../img/棒棒.png"), auto;
+    align-items: center;
+    filter: brightness(0);
+    transition: filter 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+  }
+  .container h2 {
+    font-size: 20px;
+    color: white;
+  }
+  .head {
+    height: 100%;
+    width: 40%;
+  }
+  .cha1 {
+    top: 10%;
+    width: 80%;
+    height: 500px;
+    opacity: 1;
+    position: absolute;
+  }
+  .cha2 {
+    top: 10%;
+    width: 80%;
+    height: 500px;
+    opacity: 1;
+    position: absolute;
+  }
+  .cha3 {
+    top: 10%;
+    width: 80%;
+    height: 500px;
+    opacity: 1;
+    position: absolute;
+  }
+  .cha4 {
+    top: 10%;
+    width: 80%;
+    height: 500px;
+    opacity: 1;
+    position: absolute;
+  }
+  .container2 {
+    height: 35%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    /* 文字居中 */
+    cursor: pointer; /* 鼠标悬浮效果 */
+    background-image: url("../img/長方形 藍色背景 金色邊框.png");
+    background-size: cover;
+    z-index: 1;
+  }
+  .container2 p {
+    line-height: 1.2;
+    font-size: 12px;
+    color: white;
+  }
+  .mid {
+    background-image: url(../img/主地圖2直.png);
+  }
+  .mid2 {
+    background-image: url(../img/主地圖直.png);
+  }
+  .nav ul li a {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  .nav .dow {
+    width: 15%;
+    background-color: yellow;
+    border-radius: 20px;
+    height: 100%;
+    font-size: 20px;
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    padding: 0;
+    align-items: center;
+  }
+  .logo {
+    position: absolute; /* 使其绝对定位 */
+    top: 10%; /* 距离顶部 20px */
+    left: 20%; /* 距离左边 20px */
+    width: 60%; /* 根据需要调整图片宽度 */
+    height: 40%; /* 保持比例 */
+  }
+  .video {
+    position: relative;
+    width: 100%;
+    height: 100%; /* 让背景占满视窗高度 */
+    margin: 0 auto;
+  }
+  .dowar {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    z-index: 2;
+    left: 45%;
+    bottom: 5%;
+    animation: pulse 2s infinite;
+    display: block;
+  }
+  .qr2 {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    z-index: 2;
+    left: 25%;
+    bottom: 20%;
+  }
+  .qr {
+    position: absolute;
+    bottom: 20px; /* 距离底部 20px */ /* 水平居中 */
+    transform: translateX(-50%); /* 向左移动自身宽度的50%以居中 */
+    width: 100%; /* 控制图片最大宽度 */
+    height: 200px; /* 保持图片比例 */
+    display: none;
+  }
+  .dowload {
+    display: block;
+    width: 200px;
+    height: 75px;
+    margin-left: 10px;
+  }
+  .dowload1 {
+    width: 200px;
+    height: 75px;
+    display: block;
+    margin-top: 55px;
+    margin-left: 10px;
+  }
+  .v1 {
+    margin-top: 98%;
+    margin-left: 60%;
+    position: absolute;
+    z-index: 1;
+  }
+  .v2 {
+    margin-top: 32%;
+    margin-left: 48%;
+    position: absolute;
+    z-index: 1;
+  }
+  .v3 {
+    margin-top: 122%;
+    margin-left: 12%;
+    position: absolute;
+    z-index: 1;
+  }
+  .v4 {
+    margin-top: 180%;
+    margin-left: 30%;
+    position: absolute;
+    z-index: 1;
+    overflow: visible;
+  }
+  .flex-link {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+    justify-content: flex-end; /* 文字放在底部 */
+    text-decoration: none;
+    width: 30%; /* 根据需要设置宽度 */
+    height: 15%; /* 设置固定高度 */
+    overflow: hidden;
+  }
+  .flex-link:hover img {
+    transition: transform 0.3s;
+    transform: translateY(-5px);
+    box-shadow: -10px 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  .circle {
+    display: none;
+  }
+  .team-container {
+    margin: 0 auto;
+    height: 20%;
+    width: 70%;
+    margin-top: 5%;
+  }
+  .team-container p {
+    font-size: 10px;
+    color: #fff;
+  }
+  .team-title {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .memberbox {
+    position: absolute;
+    display: inline-block;
+    width: 80%;
+    height: 15%;
+    left: 10%;
+  }
+  .memberbox1 {
+    position: absolute;
+    display: inline-block;
+    top: 55%;
+    width: 80%;
+    height: 15%;
+    left: 10%;
+  }
+  .mbox {
+    margin: 5px;
+    border-radius: 20px;
+    background-color: rgb(0, 183, 255);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 4px solid yellow;
+  }
+  .mimg {
+    border-radius: 50%;
+    width: 30%;
+  }
+  .mtext h2 {
+    margin: 0;
+  }
+  .mtext hr {
+    width: 100px;
+    border: none; /* 移除默认边框 */
+    height: 2px; /* 设置线的粗细 */
+    background-color: black; /* 设置线的颜色 */
+    margin: 0;
+  }
+  .background-video {
+    display: none;
+  }
+  .background-video1 {
+    display: block;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .v1 {
+    margin-top: 80%;
+    margin-left: 55%;
+    position: absolute;
+    z-index: 1;
+  }
+  .v2 {
+    margin-top: 26%;
+    margin-left: 45%;
+    position: absolute;
+    z-index: 1;
+  }
+  .v3 {
+    margin-top: 100%;
+    margin-left: 14%;
+    position: absolute;
+    z-index: 1;
+  }
+  .v4 {
+    margin-top: 150%;
+    margin-left: 30%;
+    position: absolute;
+    z-index: 1;
+    overflow: visible;
+  }
+  .flex-link {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;
+    justify-content: flex-end; /* 文字放在底部 */
+    text-decoration: none;
+    width: 30%; /* 根据需要设置宽度 */
+    height: 15%; /* 设置固定高度 */
+    overflow: hidden;
+  }
+  .flex-link:hover img {
+    transition: transform 0.3s;
+    transform: translateY(-5px);
+    box-shadow: -10px 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  .container1 p {
+    margin: 0;
+  }
+  .container1 h2 {
+    margin: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .carousel-button {
+    position: absolute;
+    top: 85%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+  .carousel-button.left {
+    left: 15%;
+  }
+  .carousel-button.right {
+    right: 15%;
+  }
+  .buttons {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    bottom: 25%; /* 将元素定位到父元素的底部 */
+    left: 0; /* 从左侧对齐 */
+  }
+}
+.image-group {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dow {
+  width: 15%;
+  background-color: yellow;
+  border-radius: 20px;
+  height: 100%;
+  font-size: 20px;
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
