@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown on Hover or Touch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+       
+        
+         h1 {
+           text-align: center;
+           width: 100%;
+            position: relative;
+            font-size: 36px; /* 设置标题文字大小 */
+            padding-bottom: 10px; /* 调整文字与底线的间距 */
+        }
+       h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px; /* 设置底线高度 */
+            background: linear-gradient(to right, transparent 0%, black 50%, transparent 100%);
+            /* 渐变效果：从透明到黑色再到透明 */
+        }
+       .carousel-container {
+        
+        top: 80px;
+            
+            width: 50%; /* 设置宽度为页面的 50% */
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            max-width: 800px; /* 可选：限制最大宽度 */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            max-width: none;
+            flex-shrink: 0; /* 确保图片不会缩小 */
+            margin-right: 10px; /* 图片之间的间距 */
+            object-fit: cover;
+        }
+
+    </style>
+
+</head>
+<body>
+        <div class="nav">
+        <ul>
+            <li><a href="index.html" class="home">首頁</a></li>
+            <li><a href="game.html">遊戲介紹</a></li>
+            <li><a href="ch.html">角色</a></li>
+            <li><a href="world.html">世界</a></li>
+            <li><a href="info.html">關於我們</a></li>
+        </ul>
+            <div class="dow" id="openPopupDiv">遊戲下載</div>
+        </div>
+        <div class="overlay" id="popupOverlay">
+            <div class="popup">
+                <p>立即下載</p>
+                <img src="img/windows-download.png" alt="" class="dowload1" id="download">
+                <button class="close-btn" id="closePopupBtn">关闭</button>
+            </div>
+        </div>
+    <div class="mid section" id="section2" >
+       
+        <div class="carousel-container" data-aos="zoom-in">
+            <h1 data-aos="zoom-in" >遊戲介紹</h1>
+            <p>
+                《艾特力亞奇遇記 The Adventure of Atiliia》是一款以魔法世界為背景的冒險角色扮演遊戲，講述主角艾特力亞為成為最高階附魔使而踏上充滿挑戰與奇遇的冒險旅程。他將在試煉中結識各式各樣的夥伴，經歷古老遺跡的探索，揭開隱藏的大陸秘密，並面對強大的敵人。遊戲中，玩家將透過探索村莊、歷經情感羈絆和激烈戰鬥，伴隨著艾特力亞的成長與抉擇，共同創造難忘的旅程。本小組在劇情構想中結合社會議題，運用詼諧手法重新演繹，透過輕鬆有趣的劇情，讓玩家放鬆之餘能深入體驗主角的成長與情感轉折，一起踏上有笑有淚的冒險旅程。 
+            </p>
+            <div class="carousel-images" id="carouselImages">
+                <img src="./img/介紹1.png" alt="图片1">
+                <img src="./img/介紹2.png" alt="图片2">
+                <img src="./img/介紹3.png" alt="图片3">
+                <img src="./img/介紹4.png" alt="图片3">
+            </div>
+            
+            </div> 
+                 
+        </div>
+        <div class="world">
+            <h1>世界觀</h1>
+            <div class="world-text">
+                <img src="./img/主地圖.png" alt="" class="worldimg">
+                <p>XX大陸是一片充滿魔法、奇異生物與古老傳說的土地。這裡魔法深植於每個角落，附魔使作為頂尖的魔法職業，扮演著平衡世界力量的重要角色。大陸上的各個村莊和城市既展現出繁榮與希望，也隱藏著黑暗與危機。遙遠山間的妖精村、浮空的阿瓦隆等奇特之地，與隱匿的遺跡和蠢蠢欲動的邪教勢力，共同構成了這片土地的驚奇與挑戰。探索這片大地，揭開歷史的秘辛與人心的深處。</p></div>
+            
+        </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>關於我們</h3>
+                <p>我們是一個致力於分享遊戲熱情的團隊。通過提供深入的遊戲背景介紹、角色資訊和世界觀分析，我們希望玩家可以更深入地了解遊戲的樂趣和故事，沉浸於一個充滿創意和挑戰的魔法世界中。</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="/index.html">首頁</a></li>
+                    <li><a href="/game.html">遊戲介紹</a></li>
+                    <li><a href="/character.html">角色介紹</a></li>
+                    <li><a href="/world.html">世界觀</a></li>
+                    <li><a href="/dow.html">下載中心</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>聯絡我們</h3>
+                <p>如果您有任何疑問或建議，請隨時聯繫我們的客服團隊。我們會盡快為您提供幫助，讓您獲得最佳的體驗。</p>
+                <p>Email: support@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 魔法世界遊戲介紹網站. 版權所有. 未經授權禁止轉載或引用本站內容。</p>
+        </div>
+    </footer>
+    <script>
+        const openPopupDiv = document.getElementById('openPopupDiv');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const popupOverlay = document.getElementById('popupOverlay');
+
+        // 点击触发弹窗
+        openPopupDiv.addEventListener('click', () => {
+            popupOverlay.style.display = 'block';
+        });
+
+        // 关闭弹窗
+        closePopupBtn.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
+
+        // 点击遮罩层关闭弹窗
+        popupOverlay.addEventListener('click', (event) => {
+            if (event.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        let currentIndex = 0;
+        const images = document.getElementById('carouselImages');
+        const totalImages = images.children.length;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // 根据当前索引偏移
+            images.style.transform = `translateX(${offset}%)`;
+        }
+
+        function previousImage() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages; // 确保索引循环
+            updateCarousel();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages; // 确保索引循环
+            updateCarousel();
+        }
+        setInterval(function() {
+            nextImage();  // 每隔 3 秒切换一次图片
+        }, 2000); // 3000ms = 3秒
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>

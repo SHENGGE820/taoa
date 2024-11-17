@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown on Hover or Touch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+       
+        
+         h1 {
+           text-align: center;
+           width: 100%;
+            position: relative;
+            font-size: 36px; /* 设置标题文字大小 */
+            padding-bottom: 10px; /* 调整文字与底线的间距 */
+        }
+       h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px; /* 设置底线高度 */
+            background: linear-gradient(to right, transparent 0%, black 50%, transparent 100%);
+            /* 渐变效果：从透明到黑色再到透明 */
+        }
+       .carousel-container {
+        top: 80px;
+            width: 50%; /* 设置宽度为页面的 50% */
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            max-width: 800px; /* 可选：限制最大宽度 */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            max-width: none;
+            flex-shrink: 0; /* 确保图片不会缩小 */
+            margin-right: 10px; /* 图片之间的间距 */
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            width: 100px;
+            height: 100PX;
+        }
+
+        .carousel-button.left {
+            left: 0;
+        }
+
+        .carousel-button.right {
+            right: 0;
+        }
+    </style>
+
+</head>
+<body>
+        <div class="nav">
+        <ul>
+            <li><a href="index.html" class="home">首頁</a></li>
+            <li><a href="game.html">遊戲介紹</a></li>
+            <li><a href="ch.html">角色</a></li>
+            <li><a href="world.html">世界</a></li>
+            <li><a href="info.html">關於我們</a></li>
+        </ul>
+            <div class="dow" id="openPopupDiv">遊戲下載</div>
+        </div>
+        <div class="overlay" id="popupOverlay">
+            <div class="popup">
+                <p>立即下載</p>
+                <img src="img/windows-download.png" alt="" class="dowload1" id="download">
+                <button class="close-btn" id="closePopupBtn">关闭</button>
+            </div>
+        </div>
+    <div class="mid section" id="section2" >
+       
+        <div class="carousel-container" data-aos="zoom-in">
+            <h1 data-aos="zoom-in" >皮內羅洛村</h1>
+            <div class="carousel-images" id="carouselImages">
+                <img src="./img/皮內1.png" alt="图片1">
+                <img src="./img/皮內2.png" alt="图片2">
+                <img src="./img/皮內3.png" alt="图片3">
+               
+            </div>
+            <p >皮內羅洛村是一個以篝火儀式聞名的村莊，每年都會舉辦盛大的祭祀活動來為新一年祈福。這個儀式是全村人團結的象徵，也是他們重要的文化傳統。篝火儀式通常在晚上進行，村民與遊客圍繞篝火跳舞唱歌直到深夜，展現出村莊的熱情與活力。此外，篝火儀式前村中還有手工藝展示、集市和傳統舞蹈表演等活動，讓村莊充滿歡慶氣氛。
+
+                卺挲村不僅是一個具有文化氛圍的地方，也是艾特力亞和伊絲塔試煉旅程中的第一站。在這裡，他們體驗了村莊的傳統，並與村民互動。村民熱情好客，邀請他們參與準備篝火的工作，使他們更深入地了解這個儀式和村莊的風俗。</p>
+        
+            </div>
+       
+            <button class="carousel-button left" onclick="previousImage()" ><img src="./img/箭頭左.png" alt="" style="width: 100%; height: 100%;"></button>
+            <button class="carousel-button right" onclick="nextImage()" ><img src="./img/箭頭又.png" alt="" style="width: 100%; height: 100%;" ></button>
+             
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>關於我們</h3>
+                <p>我們是一個致力於分享遊戲熱情的團隊。通過提供深入的遊戲背景介紹、角色資訊和世界觀分析，我們希望玩家可以更深入地了解遊戲的樂趣和故事，沉浸於一個充滿創意和挑戰的魔法世界中。</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="/index.html">首頁</a></li>
+                    <li><a href="/game.html">遊戲介紹</a></li>
+                    <li><a href="/character.html">角色介紹</a></li>
+                    <li><a href="/world.html">世界觀</a></li>
+                    <li><a href="/dow.html">下載中心</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h3>聯絡我們</h3>
+                <p>如果您有任何疑問或建議，請隨時聯繫我們的客服團隊。我們會盡快為您提供幫助，讓您獲得最佳的體驗。</p>
+                <p>Email: support@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 魔法世界遊戲介紹網站. 版權所有. 未經授權禁止轉載或引用本站內容。</p>
+        </div>
+    </footer>
+    <script>
+        const openPopupDiv = document.getElementById('openPopupDiv');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const popupOverlay = document.getElementById('popupOverlay');
+
+        // 点击触发弹窗
+        openPopupDiv.addEventListener('click', () => {
+            popupOverlay.style.display = 'block';
+        });
+
+        // 关闭弹窗
+        closePopupBtn.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
+
+        // 点击遮罩层关闭弹窗
+        popupOverlay.addEventListener('click', (event) => {
+            if (event.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        let currentIndex = 0;
+        const images = document.getElementById('carouselImages');
+        const totalImages = images.children.length;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100; // 根据当前索引偏移
+            images.style.transform = `translateX(${offset}%)`;
+        }
+
+        function previousImage() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages; // 确保索引循环
+            updateCarousel();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages; // 确保索引循环
+            updateCarousel();
+        }
+        setInterval(function() {
+            nextImage();  // 每隔 3 秒切换一次图片
+        }, 2000); // 3000ms = 3秒
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>

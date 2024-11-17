@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown on Hover or Touch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+        <div class="nav">
+        <ul>
+            <li><a href="/index.html" class="home">首頁</a></li>
+            <li><a href="/game.html">遊戲介紹</a></li>
+            <li><a href="/ch.html">角色</a></li>
+            <li><a href="/world.html">世界</a></li>
+            <li><a href="/info.html">關於我們</a></li>
+        </ul>
+            <div class="dow">遊戲下載</div>
+        </div>
+    <div class="mid section" id="section2">
+
+            
+            <div class="image-group" data-group="group2">
+                <div class=" container"  onclick="toggleOpacity(this, 'group2', 'cha1')"> 
+                    <img src="/img/Map011.png" alt=""  class="head1">
+                    <div>   
+                    <h2>皮內羅洛村</h2>
+                    </div>
+                </div>
+                <div class="container" onclick="toggleOpacity(this, 'group2' , 'cha2')">
+                    <img src="/img/Map016.png" alt=""  class="head1">
+                    <div>
+                    <h2>瓊斯鎮</h2>
+                </div>
+                </div>
+                <div class="container" onclick="toggleOpacity(this, 'group2' , 'cha3')">
+                    <img src="/img/Map016.png" alt=""  class="head1">
+                    <div>
+                    <h2>阿瓦隆</h2>
+                    </div>
+                </div>
+                <div class="container" onclick="toggleOpacity(this, 'group2' , 'cha3')">
+                    <img src="/img/Map016.png" alt=""  class="head1">
+                    <div>
+                    <h2>阿瓦隆</h2>
+                    </div>
+                </div>
+            </div>
+                
+                    <div class="cha1">
+                        <div class=" container2" id="character1"  > 
+                            <img src="/img/艾特力亞.png" alt=""  class="head" >
+                            <div>
+                            <h2>艾特力亞</h2>
+                            <p>男主角，自幼在高阶附魔使小八的救助下获救，立志成为最强附魔使。他个性大大咧咧，表面看似轻率，实际上深思熟虑。因年幼时经历生死危机，因此行事更加谨慎。冒险途中，他凭借自己的能力逐步成长，并肩负起更大的责任。</p>
+                        </div>
+                        </div>
+                        <div class="container2" id="character2">
+                            <img src="/img/一絲塔.png" alt=""  class="head">
+                            <div>
+                            <h2>伊斯塔</h2>
+                            <p>女主角，性格冷静、自主，外表神秘且喜欢美食，内心却对自己的族裔（精灵族）感到自豪。她对艾特力亚的冒失举动感到无奈，因实验被打断而不满，起初对他态度疏离。随着冒险的进展，她逐渐对艾特力亚敞开心扉，并开始信任他。</p>
+                        </div>
+                        </div>
+                        <div class="container2" id="character3">
+                            <img src="/img/小八.png" alt=""  class="head">
+                            <div>
+                            <h2>小八</h2>
+                            <p>三阶附魔使，艾特力亚的救命恩人和偶像。他以坚韧的意志和强大的附魔能力受到人们的尊敬。对艾特力亚的成长起到重要作用，最终与艾特力亚对峙，成为男主角成长的关键标志。</p>
+                        </div>
+                        </div>
+                        <div class="buttons">
+                            <img src="/img/艾特力亞.png" alt="艾特力亞" onclick="showCharacter('character1')" style="width:100px; height:100px; cursor:pointer;" data-aos="fade-up" data-aos-duration="1000">
+                            <img src="/img/一絲塔.png" alt="伊絲塔" onclick="showCharacter('character2')" style="width:100px; height:100px; cursor:pointer;">
+                            <img src="/img/小八.png" alt="小八" onclick="showCharacter('character3')" style="width:100px; height:100px; cursor:pointer;">
+                    </div>
+                </div>
+                     <div class="cha2">
+                        <div class=" container2"  id="character4"> 
+                            <img src="/img/洪靜.png" alt=""  class="head">
+                            <div>
+                            <h2>艾特力亞</h2>
+                            <p>男主角，自幼在高阶附魔使小八的救助下获救，立志成为最强附魔使。他个性大大咧咧，表面看似轻率，实际上深思熟虑。因年幼时经历生死危机，因此行事更加谨慎。冒险途中，他凭借自己的能力逐步成长，并肩负起更大的责任。</p>
+                        </div>
+                        </div>
+                        <div class="container2" id="character5">
+                            <img src="/img/洪靜老婆.png" alt=""  class="head">
+                            <div >
+                            <h2>伊斯塔</h2>
+                            <p>女主角，性格冷静、自主，外表神秘且喜欢美食，内心却对自己的族裔（精灵族）感到自豪。她对艾特力亚的冒失举动感到无奈，因实验被打断而不满，起初对他态度疏离。随着冒险的进展，她逐渐对艾特力亚敞开心扉，并开始信任他。</p>
+                        </div>
+                        </div>
+                        <div class="container2"  id="character6">
+                            <img src="/img/林于茹.png" alt=""  class="head">
+                            <div>
+                            <h2>小八</h2>
+                            <p>三阶附魔使，艾特力亚的救命恩人和偶像。他以坚韧的意志和强大的附魔能力受到人们的尊敬。对艾特力亚的成长起到重要作用，最终与艾特力亚对峙，成为男主角成长的关键标志。</p>
+                        </div>
+                        </div>
+                        <div class="buttons">
+                            <img src="/img/林于茹.png" alt="林于茹" onclick="showCharacter('character4')" style="width:100px; height:100px; cursor:pointer;">
+                            <img src="/img/邪教腳主.png" alt="邪教教主" onclick="showCharacter('character5')" style="width:100px; height:100px; cursor:pointer;">
+                            <img src="/img/洪靜.png" alt="洪靜" onclick="showCharacter('character6')" style="width:100px; height:100px; cursor:pointer;">
+                        </div>
+                     </div>
+                        <div class="cha3">
+                            <div class=" container2" id="character7"> 
+                                <img src="/img/邪教腳主.png" alt=""  class="head" >
+                                <div>
+                                <h2>艾特力亞</h2>
+                                <p>男主角，自幼在高阶附魔使小八的救助下获救，立志成为最强附魔使。他个性大大咧咧，表面看似轻率，实际上深思熟虑。因年幼时经历生死危机，因此行事更加谨慎。冒险途中，他凭借自己的能力逐步成长，并肩负起更大的责任。</p>
+                            </div>
+                            </div>
+                            <div class="container2" id="character8">
+                                <img src="/img/女主老媽.png" alt=""  class="head">
+                                <div >
+                                <h2>伊斯塔</h2>
+                                <p>女主角，性格冷静、自主，外表神秘且喜欢美食，内心却对自己的族裔（精灵族）感到自豪。她对艾特力亚的冒失举动感到无奈，因实验被打断而不满，起初对他态度疏离。随着冒险的进展，她逐渐对艾特力亚敞开心扉，并开始信任他。</p>
+                            </div>
+                            </div>
+                            <div class="container2" id="character9">
+                                <img src="/img/麻吉麻.png" alt=""  class="head">
+                                <div>
+                                <h2>小八</h2>
+                                <p>三阶附魔使，艾特力亚的救命恩人和偶像。他以坚韧的意志和强大的附魔能力受到人们的尊敬。对艾特力亚的成长起到重要作用，最终与艾特力亚对峙，成为男主角成长的关键标志。</p>
+                            </div>
+                            </div>
+                            <div class="buttons">
+                                <img src="/img/邪教腳主.png" alt="邪教教主" onclick="showCharacter('character7')" style="width:100px; height:100px; cursor:pointer;">
+                                <img src="/img/女主老媽.png" alt="女主老媽" onclick="showCharacter('character8')" style="width:100px; height:100px; cursor:pointer;">
+                                <img src="/img/麻吉麻.png" alt="麻吉麻" onclick="showCharacter('character9')" style="width:100px; height:100px; cursor:pointer;">
+                            </div>
+                    </div>
+        
+            
+        
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>關於我們</h3>
+                <p>我們是一個致力於分享遊戲熱情的團隊。通過提供深入的遊戲背景介紹、角色資訊和世界觀分析，我們希望玩家可以更深入地了解遊戲的樂趣和故事，沉浸於一個充滿創意和挑戰的魔法世界中。</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="/index.html">首頁</a></li>
+                    <li><a href="/game.html">遊戲介紹</a></li>
+                    <li><a href="/character.html">角色介紹</a></li>
+                    <li><a href="/world.html">世界觀</a></li>
+                    <li><a href="/dow.html">下載中心</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h3>聯絡我們</h3>
+                <p>如果您有任何疑問或建議，請隨時聯繫我們的客服團隊。我們會盡快為您提供幫助，讓您獲得最佳的體驗。</p>
+                <p>Email: support@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 魔法世界遊戲介紹網站. 版權所有. 未經授權禁止轉載或引用本站內容。</p>
+        </div>
+    </footer>
+    <script>
+       function showCharacter(characterId) {
+    // 隐藏所有角色信息
+    const allCharacters = document.querySelectorAll('.container2');
+    allCharacters.forEach(character => {
+        character.classList.remove('show'); // 移除显示类
+    });
+
+    // 显示指定角色信息
+    const characterToShow = document.getElementById(characterId);
+    if (characterToShow) {
+        characterToShow.classList.add('show'); // 添加显示类
+    }
+}
+
+        function toggleOpacity(clickedContainer, group, chaClass) {
+            // 选择特定组中的所有容器
+            const groupContainers = document.querySelectorAll(`.image-group[data-group="${group}"] .container`);
+    
+            groupContainers.forEach(container => {
+                container.classList.remove('clicked');
+                container.style.filter = 'brightness(0.5)'; 
+            });
+    
+            clickedContainer.classList.toggle('clicked');
+            clickedContainer.style.filter = clickedContainer.classList.contains('clicked') ? 'brightness(1)' : 'brightness(0.5)';
+    
+            // 隐藏所有 cha
+            const allCha = document.querySelectorAll('.cha1, .cha2, .cha3');
+            allCha.forEach(cha => {
+                cha.style.opacity = '0';
+                cha.style.zIndex = '1';
+            });
+    
+            // 显示对应 cha
+            const activeCha = document.querySelector(`.${chaClass}`);
+            if (activeCha) {
+                activeCha.style.opacity = '1';
+                activeCha.style.zIndex = '2';
+    
+                // 显示第一个角色信息
+                const firstCharacterId = activeCha.querySelector('.container2').id; // 获取第一个角色的 ID
+                showCharacter(firstCharacterId); // 显示第一个角色信息
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+    // 显示 cha1 的第一个角色信息
+    const firstCharacterId = document.querySelector('.cha1 .container2').id; // 获取 cha1 第一个角色的 ID
+    showCharacter(firstCharacterId); // 显示第一个角色信息
+
+    // 模拟点击皮內羅洛村
+    const pineroloVillage = document.querySelector('.image-group .container'); // 选择皮內羅洛村的容器元素
+    if (pineroloVillage) {
+        toggleOpacity(pineroloVillage, 'group2', 'cha1'); // 触发点击事件
+    }
+});
+    </script>
+    
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+      <script>
+        // 当前显示的 section 索引
+        let currentSection = 1;
+
+        // 监听滚轮事件
+        window.addEventListener('wheel', (event) => {
+            // 向下滚动
+            if (event.deltaY > 0) {
+                // 跳到下一个 section
+                currentSection++;
+            } else {
+                // 向上滚动
+                currentSection--;
+            }
+
+            // 限制 currentSection 范围
+            const totalSections = document.querySelectorAll('.section').length;
+            currentSection = Math.max(1, Math.min(currentSection, totalSections));
+
+            // 滚动到指定的 section
+            document.getElementById(`section${currentSection}`).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>
